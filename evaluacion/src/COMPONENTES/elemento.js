@@ -1,19 +1,31 @@
-import React from 'react';
-
 class Elemento extends React.Component{
-    
+
     eliminarElemento=()=>{
-        this.props.eliminarElementoPractica1(this.props.elem.id);
+        this.props.eliminarUsuario(this.props.elem.id);
     }
 
     render(){
         const {elem}= this.props;
-        return <div> 
-        <button style= {elem.color} onClick={this.eliminarElemento}>
-            {elem.nombre}
-        </button>
-        </div>
+        return(
+        <tr>
+            <td>
+                {elem.id}
+            </td>
+            <td>
+                {elem.nombre}
+            </td>
+            <td>
+                {elem.apellido}
+            </td>
+            <td>
+                {elem.edad}
+            </td>
+            <td>
+                <button onClick={this.eliminarElemento}>
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+        ) 
     }
 }
-
-export default Elemento;
